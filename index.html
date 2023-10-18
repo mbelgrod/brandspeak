@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		@font-face {
+			font-family: "GT America";
+			src:
+			local("GT America"),
+			url("GT-America-Standard-Regular-Trial.woff2") format("woff");
+			font-weight: regular;}
+
+		@font-face {
+			font-family: "GT America";
+			src:
+			local("GT America"),
+			url("GT-America-Standard-Bold-Trial.woff2") format("woff");
+			font-weight: bold;}
+		
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.container {
+			height: 100dvh;
+			width: 100vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			gap: 100px;
+		}
+
+		p {
+			font-family: "GT America";
+			font-size: 3rem;
+			line-height: 1.2;
+			text-align: center;
+			max-width: 75dvw;
+		}
+		button {
+			cursor: pointer;
+			font-family: "GT America";
+			font-size: 1rem;
+			line-height: 1.2;
+			text-align: center;
+			color: black;
+			padding: 1rem 1rem;
+			text-decoration: none;
+			display: inline-block;
+			background-color: white;
+			border: 3px solid black;
+			font-weight: bold;
+		}
+		button:hover {
+			background-color: black;
+			color: white;
+			border: 3px solid black;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<p id="test"></p>
+		<button onclick="randomSentence()">GENERATE NEW BRAND POSITIONING</button>
+	</div>
+
+
+	<script>
+
+		let verbCaps = ['Adapting to','Bringing out','Building','Celebrating','Connecting','Creating','Disrupting','Empowering','Ensuring','Evolving', 'Expanding','Future-proofing','Hacking','Impacting','Improving','Inspiring','Leveraging','Making','Managing','Optimizing','Powering','Queerifying','Reaching','Realizing','Reinventing','Reshaping','Revolutionizing','Scaling','Serving','Shaping','Solving','Strengthening','Transforming','Uniting','Wiping out','Defining','Rebuilding'];
+		let audience = ["the world's", "patient's", "your pet's", 'your', 'our', "your neighborhood's", "your family's", "employees'", "humanity's", "your customer's", "everyone's", "the next generation's"];
+		let adjective = ['biggest','most challenging','necessary','important','central','corporate','largest','uncommon','sustainable','transformative','potential','critical','urgent','global','rapidly changing','new ways of','smart','purpose-driven','drastic'];
+		let idea = ['move','challenges','lives','cities','spaces','waste','movement','well-being','sanity','wealth','beauty','healthcare','needs'];
+		let adjective2 = ['accessible','award-winning','B2B','better','boundless','break-through','creative','digital','disruptive','drastic','DTC','full-funnel','global','groundbreaking','impactful','inclusive','intuitive','integrated','innovative','leading','legacy','local','more','multinational','new age','powerful','proven','relevant','scalable','shared','stealth-mode','sustainable','tech-enabled','top','transformative','unconventional','unprecedented','world-class','world-changing','worldwide','tremendous','emerging','cutting-edge','next-level','end-to-end','efficient','ethical','faster','flexible','frictionless','adaptive'];
+		let tool = ['technology','science','magic','science','magic','care','innovations','compassion','expertise','creativity','skincare','entertainment','food','beauty','fashion','health','wellness','fitness','education','finance','money','banking','platforms','software','hardware','ingredients','tools','experiences','data','design'];
+
+
+		function randomSentence() {
+			let paragraph1 = document.querySelector("#test");
+			paragraph1.innerText = verbCaps[Math.floor(Math.random()*verbCaps.length)] + " " + audience[Math.floor(Math.random()*audience.length)] + " " + adjective[Math.floor(Math.random()*adjective.length)] + " " + idea[Math.floor(Math.random()*idea.length)] + " with " + adjective2[Math.floor(Math.random()*adjective2.length)] + " " + tool[Math.floor(Math.random()*tool.length)];
+		}
+		randomSentence();
+
+	</script>
+</body>
+</html>
